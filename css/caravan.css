@@ -1,0 +1,167 @@
+body{
+    text-align: center;
+}
+
+.clear{
+    clear:both;
+    border:0px solid red;
+}
+
+#Div_head {
+    background-color: #fff;
+    width: 1080px;
+    padding-top: 0px;
+    height: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid red;
+}
+
+#Div_Logo{
+    float: left;
+    margin-top: 15px;
+    width: 185px;
+    border: 0px solid red;
+}
+
+#Div_Call {
+    float: left;
+    font-family: 'Tahoma';
+    font-size: 20px;
+    text-align: left;
+    color: #333;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 405px;
+    margin-top:15px;
+    border: 0px solid red;
+}
+
+#Div_Lang{
+    float: left;
+    margin-top: 25px;
+    margin-left: 50px;
+    border: 0px solid red;
+}
+
+#Div_MenuBelt {
+    position: relative;
+    left: 0px;
+    background-color: #53b50a;
+    width: 100%;
+    padding-top: 0px;
+    height: 51px;
+    border: 0px solid red;
+}
+
+#Div_MenuBelt2{
+    position: relative;
+    width:1080px;
+    height: 234px;
+    margin-left:auto;
+    margin-right: auto;
+    border: 0px solid red;
+}
+
+#Div_List_KD{
+    display: none;
+    position: absolute;
+    left: 0px;
+    top : 51px;
+    width: 466px;
+    height: 180px;
+    border: 1px solid #53b50a;
+    border-top : 0px;
+    background-color: #ffffff;
+    opacity: 0.7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+#Div_List_HY{
+    display: none;
+    position: absolute;
+    left: 175px;
+    top : 51px;
+    width: 323px;
+    height: 180px;
+    border: 1px solid #53b50a;
+    border-top : 0px;
+    background-color: #ffffff;
+    opacity: 0.7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.div_menu_list_small{float: left;width:150px;margin-top:20px;}
+p.p_menu_list{padding-top: 20px;font-family: 'microsoft yahei';font-size:16px;font-weight: bold; color:#333333;}
+p.p_menu_list a{padding-top: 20px;font-family: 'microsoft yahei';font-size:16px;font-weight: bold;color: #333333;}
+p.p_menu_list a:hover{padding-top: 20px;font-family: 'microsoft yahei';font-size:16px;font-weight: bold;color: #ee552a;}
+
+
+
+
+.p_menu{font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;  font-weight: Bold; letter-spacing: 1px;font-size: 16px;}
+.Div_Menu {padding-left: 20px;padding-right:20px;float: left;height: 51px;line-height: 51px;text-align: center;vertical-align: middle;border: 0px solid red;cursor: pointer;}
+.Div_Menu_Normal {color: #ffffff;}
+.Div_Menu_Hover {color: #52941a;background: url('../img/menu_hover_short.jpg') no-repeat center;}
+.Div_Menu_Hover_Long {color: #52941a; background: url('../img/menu_hover_long.jpg') no-repeat center;}
+.Div_Menu_Selected {color: #ffffff;background-color: #52951b;}
+
+
+.Div_NeiYe_InfoBelt{clear: left;left: 0px;width: 100%;background-color: #f2f2f2;border: 0px solid red;padding-top: 30px;padding-bottom: 50px;}
+.Div_NeiYe_InfoBelt2{width:1080px;margin-left:auto;margin-right:auto;border:0px solid blue;}
+.Div_NeiYe_Info{border: 0px solid green;}
+    .Div_NeiYe_Info_Text{float:left;width:800px;text-align: left;background-color: #ffffff;padding: 30px 20px 30px 20px ;border:1px solid #cccccc;}
+        .Div_NeiYe_Info_Head{padding-bottom: 20px;border-bottom: 1px dotted #53b50a;}
+            .Div_NeiYe_Info_Head_BG{background-color: #53b50a;width:5px;float:left;height: 24px;line-height: 24px;}
+            .Div_NeiYe_Info_Head_Text{width:100px; float:left; margin-left: 15px; height: 24px;line-height: 24px;font-family: 'Microsoft YaHei';font-size: 24px; font-weight: bold; color:#ee552a;}
+        .Div_NeiYe_Info_Detail{border : 0px solid red;margin-top: 20px;margin-left: 20px;}
+    .Div_NeiYe_Info_Navi{float: left;width: 250px;margin-left: 30px;border :0px solid red;}
+
+.P_Info_Detail_1{font-family: 'Microsoft YaHei';font-size:18px; font-weight: bold;color:#407414;}
+.P_Info_Detail_2{font-family: 'Microsoft YaHei';font-size:14px; color: #666666;}
+
+.div_mi_item{
+    float:left;margin-left: 3px;outline: none; vertical-align: middle;height: 26px;background-color: #ffffff;line-height: 12px;
+    padding: 7px 10px 10px 7px;font-size: 12px;border:1px solid #cccccc;border-radius: 5px;
+    margin-top: 5px;
+}
+.div_mi_item_content{float:left;font-size: 12px; border:0px solid red;}
+.div_mi_item_close{float:left;margin-left: 5px;border:0px solid blue;;background: url('../img/chacha.png');width: 12px;height: 12px;cursor:pointer;}
+
+.div_mi_item_active{background-color: #f2f2f2;}
+
+
+
+#Div_Bottom{
+    position: relative;
+    width:1080px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    margin-bottom: 70px;
+    border: 0px solid red;
+}
+
+.Div_BottomList{
+    float:left;width:180px;height:200px;border-right:1px solid #E3E3E3;padding-top: 5px;padding-left: 40px;text-align: left;
+}
+
+.Font_Bottom1{
+    font-family: 'Microsoft YaHei';
+    font-size: 16px;
+    font-weight: bold;
+    color:#464646;
+}
+
+.Font_Bottom2{
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    line-height: 28px;
+    color: #838383;
+}
+.Font_Bottom2 a{font-family: 'Microsoft YaHei';font-size: 14px;line-height: 28px;color: #838383;}
+.Font_Bottom2 a:hover{font-family: 'Microsoft YaHei';font-size: 14px;line-height: 28px;color: #464646;}
+.Font_Bottom2 a:visited{font-family: 'Microsoft YaHei';font-size: 14px;line-height: 28px;color: #838383;}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+    <link rel='stylesheet' href='css/bootstrap.min.css' />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body style="text-align: center;">
+
+<div id="div_submit" style="margin-top:100px;cursor:pointer;">提交</div>
+
+<div id="div_input" style="margin-left: auto;margin-right: auto; width :800px; height: 500px;border : 1px solid red; text-align: left;overflow-y: auto;" contenteditable="true">
+</div>
+
+<script>
+
+    var hasImg = false;
+    var canUploadImg = true;
+    var imgCount = 0;
+
+    function getContent(divID){
+        var content = $(divID).html()
+                .replace("<div><br></div>","")
+                .replace("<div>","<br>")
+                .replace("</div>");
+        return content;
+    }
+
+    function doUpload(){
+        if(hasImg) {
+            if (canUploadImg) {
+                alert("i will upload the img now...");
+            }
+            else{
+                alert("can not upload img from http");
+            }
+        }
+        else{
+            alert("no img , create the notice now");
+        }
+    }
+
+    function initMe(){
+        $("#div_submit").click(
+                function() {
+                    imgCount = 0;
+                    hasImg = false;
+                    canUploadImg = true;
+
+                    if($("#div_input img ").length > 0) {
+                        hasImg = true;
+                        $("#div_input img").each(
+                            function () {
+                                if ($(this).attr("src").indexOf("http") >= 0) {
+                                    canUploadImg = false;
+
+                                    //设置选中当前有问题的图片
+                                    var range = document.createRange();
+                                    range.selectNode(this);
+                                    window.getSelection().addRange(range);
+
+                                    return false;
+                                }
+                                imgCount ++ ;
+                            }
+                        );
+                    }
+                    doUpload();
+                }
+        );
+
+        // 初始化输入框的paste事件
+        $("#div_input").bind("paste",function(evt) {
+            //chrome下可以用 clipboardData.items 对象
+            if (typeof evt.originalEvent.clipboardData.items != "undefined") {
+                for(var i=0; i< evt.originalEvent.clipboardData.items.length; i++){
+                    var item = evt.originalEvent.clipboardData.items[i] ;
+                    if(item.kind == "file" && item.type == "image/png" ){
+                        var blob = item.getAsFile();
+                        var fileReader = new FileReader();
+                        fileReader.onloadend = function(e){
+                            var img = document.createElement("IMG");
+                            img.src = fileReader.result;
+
+                            var range = window.getSelection().getRangeAt(0);
+                            range.insertNode(img);
+                            range.collapse(false);
+
+                            var selection = window.getSelection();
+                            selection.removeAllRanges();
+                            selection.addRange(range);
+                        };
+                        fileReader.readAsDataURL(blob);
+                        evt.preventDefault();
+                        break;
+                    }
+                }
+            }
+            //FF下，可以获取刚刚新增的 img 元素，src里面有图像的原始数据，类似于：
+            //data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjQAA.*
+            else{
+                // FF下的就先不处理，post的时候交给服务器去处理
+            }
+        });
+
+
+
+    }
+
+    $(document).ready(initMe);
+
+</script>
+
+</body>
+</html>
