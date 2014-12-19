@@ -1,3 +1,5 @@
+
+
 body{
     text-align: center;
 }
@@ -94,6 +96,36 @@ body{
     border-bottom-right-radius: 10px;
 }
 
+#Div_Input{
+    background: url('../img/search_bg.png');
+    width:505px;
+    height: 75px;
+    position:relative;
+    top: 235px;
+    border: 0px solid red;
+    display: block;
+}
+
+#Div_MultiInput{
+    float:left;
+    margin-left:10px;
+    width:320px ;
+    height: 40px;
+    line-height: 40px;
+    border: 0px solid red;
+    border-top : 0px;
+    background-color: #ffffff;
+    opacity: 0.9;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+#Div_MultiInput #input_Code{
+    float:left;height: 40px;width:150px ;line-height: 40px; border:0px solid green; color:#999999;outline:none;margin-left: 3px;
+}
+
 .div_menu_list_small{float: left;width:150px;margin-top:20px;}
 p.p_menu_list{padding-top: 20px;font-family: 'microsoft yahei';font-size:16px;font-weight: bold; color:#333333;}
 p.p_menu_list a{padding-top: 20px;font-family: 'microsoft yahei';font-size:16px;font-weight: bold;color: #333333;}
@@ -165,3 +197,16 @@ p.p_menu_list a:hover{padding-top: 20px;font-family: 'microsoft yahei';font-size
 .Font_Bottom2 a{font-family: 'Microsoft YaHei';font-size: 14px;line-height: 28px;color: #838383;}
 .Font_Bottom2 a:hover{font-family: 'Microsoft YaHei';font-size: 14px;line-height: 28px;color: #464646;}
 .Font_Bottom2 a:visited{font-family: 'Microsoft YaHei';font-size: 14px;line-height: 28px;color: #838383;}
+
+.div_search_inventory_info{ margin-top: 20px; position:relative; background-color: #eeeeee;}
+.div_search_inventory_info .span_title{font-family: 'Microsoft YaHei';font-size: 18px;color: #3F7213; font-weight: bold;}
+.div_search_inventory_info .span_content{font-family: 'Microsoft YaHei';font-size: 16px;color: #666666;}
+
+
+.div_search_inventory_split{ border-bottom: 1px dotted #666666; }
+
+.div_search_inventory_log{ margin-top: 0px;}
+.div_search_inventory_log .span_title{font-family: 'Microsoft YaHei';font-size: 18px;color: #3F7213;font-weight: bold;}
+.div_search_inventory_log_item{}
+.div_search_inventory_log_item .span_time{font-family: 'tahoma';font-size: 14px;color: #666666;line-height: 26px;}
+.div_search_inventory_log_item .span_content{font-family: 'Microsoft YaHei';font-size: 14px;color: #666666;line-height: 26px; margin-left: 10px;}

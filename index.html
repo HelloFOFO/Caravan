@@ -84,7 +84,6 @@
         <div style="position:relative;margin-left: 20px;margin-top: 20px;float: left;height: 40px;border: 0px solid red;background-color: #ffffff;border-radius: 7px;">
             <div id="div_q" style="float:left;margin-left: 10px;vertical-align: middle;height: 40px;line-height: 40px;border: 0px solid red;"><img src="img/q.png"/></div>
             <div id=Div_MultiInput >
-                <input id="input_Code" placeholder="请输入您的订单号" maxlength="20">
             </div>
         </div>
         <div id="Div_Sub_Query" style="float:left;margin-left: 15px; cursor: pointer;background: url('img/btn_search.png');height: 40px;margin-top: 20px;width:100px;"></div>
@@ -190,6 +189,7 @@
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/caravan.js"></script>
+<script src="js/segmentInput.js"></script>
 
 <script>
     function initMe(){
@@ -200,14 +200,18 @@
         $("#Div_MultiInput").click(
                 function(){
                     $("#Div_MultiInput").animate({height: '185px'});
-                    $("#input_Code").focus();
                 }
         );
-        $("#input_Code").keyup(dealInputCodeKeyUp);
-        $("#Div_Sub_Query").click(goQuery);
+        var inputs = $('#Div_MultiInput').segInput()
+        $("#Div_Sub_Query").click(
+                function() {
+                    goQuery(inputs.getInputs());
+                }
+        );
     }
 
     $(document).ready(initMe);
+
 </script>
 
 </body>

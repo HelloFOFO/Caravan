@@ -13,7 +13,7 @@ var isValidCode = function(val){
     var patten = /^[a-zA-Z0-9]+$/;
     return patten.test(val);
 }
-
+/*
 //用于动态添加div的函数，添加后，要把输入框清空；
 //同时给最新添加的 div 绑定 keyup 事件（最好阻止冒泡）
 var newDiv = function(val){
@@ -75,7 +75,7 @@ var dealInputCodeKeyUp = function(evt){
         }
     }
 }
-
+*/
 function init(){
     //设置菜单的交互
     $(".Div_Menu").hover(
@@ -176,6 +176,7 @@ function init(){
 
 $(document).ready(init);
 
-function goQuery(){
-    alert("后台系统研发中，上线后会立即开放查询功能");
+function goQuery(inputCodes){
+//    alert("后台系统研发中，上线后会立即开放查询功能");
+    window.location.href = "srch.html?codes="+inputCodes;
 }

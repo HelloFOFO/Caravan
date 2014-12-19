@@ -9,7 +9,6 @@
     <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
 </head>
 <body>
-
 <div id="Div_head">
     <div id="Div_Logo"><img src="img/logo.png"></div>
     <div id="Div_Call"><p><img src="img/call_icon.png">&nbsp;4008-697-200</p></div>
@@ -31,10 +30,10 @@
 <div id="Div_MenuBelt">
     <div id="Div_MenuBelt2">
         <div ID="Div_Menu_SY" class="Div_Menu Div_Menu_Normal" style="margin-left:30px;"><p class="p_menu">首页</p></div>
-        <div ID="Div_Menu_KD" class="Div_Menu Div_Menu_Normal" style="margin-left:60px;"><p class="p_menu">快递</p></div>
+        <div ID="Div_Menu_KD" class="Div_Menu Div_Menu_Selected" style="margin-left:60px;"><p class="p_menu">快递</p></div>
         <div ID="Div_Menu_HY" class="Div_Menu Div_Menu_Normal" style="margin-left:60px;"><p class="p_menu">货运</p></div>
         <div ID="Div_Menu_CC" class="Div_Menu Div_Menu_Normal" style="margin-left:60px;"><p class="p_menu">仓储</p></div>
-        <div ID="Div_Menu_ZZFW" class="Div_Menu Div_Menu_Selected" style="margin-left:60px;"><p class="p_menu">增值服务</p></div>
+        <div ID="Div_Menu_ZZFW" class="Div_Menu Div_Menu_Normal" style="margin-left:60px;"><p class="p_menu">增值服务</p></div>
         <div ID="Div_Menu_GYWM" class="Div_Menu Div_Menu_Normal" style="margin-left:60px;"><p class="p_menu">关于我们</p></div>
         <div ID="Div_List_KD">
             <div class="div_menu_list_small">
@@ -63,49 +62,19 @@
     </div>
 </div>
 
-<div id="Div_ZZFW_CenterPic" style="background: url('img/kv_zzfw.jpg') no-repeat center;background-color: #f2f2f2;width: 100%;height: 280px;border: 0px solid red;z-index: 1;"></div>
-
-
 <div class="Div_NeiYe_InfoBelt">
     <div class="Div_NeiYe_InfoBelt2">
 
-        <div id="Div_ZZFW" class="Div_NeiYe_Info_Text">
+        <div id="Div_CC" class="Div_NeiYe_Info_Text">
             <div class="Div_NeiYe_Info_Head">&nbsp;
                 <div class="Div_NeiYe_Info_Head_BG">&nbsp;</div>
-                <div class="Div_NeiYe_Info_Head_Text">增值服务</div>
+                <div class="Div_NeiYe_Info_Head_Text">在线查询</div>
             </div>
-            <div class="Div_NeiYe_Info_Detail">
-                <p class="P_Info_Detail_1">异地取件服务</p>
-                <p class="P_Info_Detail_2" style="margin-top:20px;">
-                    如果您委托我们到指定地点收取货物，我们按照您提供的地址、联系人和联系电话等信息，将货物运送到您指定收件对象的服务。
+            <div class="Div_NeiYe_Info_Detail" id="div_searchResult">
 
-
-                </p>
-                <p class="P_Info_Detail_1" style="margin-top:40px;">包装服务</p>
-                <p class="P_Info_Detail_2" style="margin-top:20px; line-height: 26px;">
-                    我们拥有专业的包装研发团队，通过研究和应用新材料、新技术，根据客户的要求提供专业的设计服务，降低企业的包装研发成本。同时我们可以提供多种专业的包装方案：酒类包装方案、液晶屏类包装方案、手机/平板类包装方案、珠宝首饰类包装方案等
-
-
-                </p>
-                <p class="P_Info_Detail_1" style="margin-top:40px;">保价服务</p>
-                <p class="P_Info_Detail_2" style="margin-top:20px; line-height: 26px;">
-                    如果您针对运输的货物向我们提供声明价值，并支付相应的保险费用，当物品在运输过程中发生丢损时，我们将按照物品的声明价值赔偿相应损失。
-
-
-                </p>
-                <p class="P_Info_Detail_1" style="margin-top:40px;">签单返还服务</p>
-                <p class="P_Info_Detail_2" style="margin-top:20px; line-height: 26px;">
-                    如果您在货物运输前要求，我们在成功运送货物后，将您提供的需收件方签名的单据返还到您的服务。
-
-
-                </p>
-                <p class="P_Info_Detail_1" style="margin-top:40px;">短信通知服务</p>
-                <p class="P_Info_Detail_2" style="margin-top:20px; line-height: 26px;">
-                    我们可以安排货物到达目的地准备送货时，向收方客户发送一条送货提示短信，提醒客户作好收货准备。收方客户成功签收货物后，将签收信息以短信推送至寄件客户的服务。
-
-                </p>
             </div>
         </div>
+
 
         <!-- 右侧导航 -->
         <div  class="Div_NeiYe_Info_Navi">
@@ -199,15 +168,21 @@
             <div id=div_zxkf style="width:120px; height: 32px; background-image: url('img/btn_cs.png');margin-left: 15px; margin-top:20px;line-height: 32px;text-align: center; cursor:pointer;"></div>
         </a>
     </div>
+
+    <div class="clear"></div>
 </div>
 
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/caravan.js"></script>
 <script src="js/segmentInput.js"></script>
+<script src="js/moment.js"></script>
 
 <script>
-    function initMe() {
+
+
+
+    function initMe(){
         //输入框事情处理
         $("#Div_MultiInput").click(
                 function(){
@@ -222,9 +197,105 @@
                     goQuery(inputs.getInputs());
                 }
         );
+
+        var s = request.QueryString("codes") == null ? "":request.QueryString("codes") ;
+
+        var codeList = [];
+        codeList = s.split(",");
+        for(j=0;j<codeList.length;j++)
+        {
+            val = codeList[j];
+            //简单的判断下
+            if(val.length > 1){
+//                alert(val);
+                $.ajax(
+                        {
+                            url: "./inventory/showinventoryinfo.asp",
+                            method: "post",
+                            async:false,
+                            data: "{id:"+val+"}"
+                        }
+                ).done(
+                        function (data) {
+//                            alert(data);
+                            var jsonRes = $.parseJSON(data);
+                            if(jsonRes.Rst && jsonRes.Rst.length==1){
+                                var inventoryInfo = jsonRes.Rst[0];
+                                // 如果已经有了这个ID，直接返回
+                                if($("#div_info_"+inventoryInfo[0]).length > 0){
+                                    return;
+                                }
+                                var resultHTML = "";
+                                resultHTML += "<div class=div_search_inventory_info id=div_info_"+inventoryInfo[0]+">"
+                                resultHTML += "<span class=span_title>单号：</span><span class=span_content style='font-weight: bold;'>"+inventoryInfo[0]+"</span>";
+                                resultHTML += "<br><span class=span_title style='margin-left: 0px;'>状态：</span><span class=span_content>"+inventoryInfo[9]+"</span>";
+//                            resultHTML += "<span class=span_title>出发：</span><span class=span_content>"+inventoryInfo[1]+"</span><br>";
+//                            resultHTML += "<span class=span_title>到达：</span><span class=span_content>"+inventoryInfo[3]+"</span><br>";
+//                            resultHTML += "<span class=span_title>取件：</span><span class=span_content>"+moment(inventoryInfo[6],"DD/MM/YYYY HH:mm:ss").format("YYYY-MM-DD HH:mm:ss")+"</span><br>";
+                                resultHTML += "</div>"
+//                                alert("0--"+$("#div_searchResult").html());
+                                $("#div_searchResult").html($("#div_searchResult").html()+resultHTML);
+//                                alert("1--"+$("#div_searchResult").html());
+
+                                $.ajax(
+                                        {
+                                            url:"./inventory/showinventorydetail.asp",
+                                            type:"post",
+                                            async:false,
+                                            data:"{id:"+val+"}"
+                                        }
+                                ).done(
+                                        function(data){
+                                            var jsonResLog = $.parseJSON(data);
+//                                            alert(JSON.stringify(jsonResLog));
+
+                                            var logInfo;
+                                            resultHTML = "";
+                                            resultHTML += "<div class=div_search_inventory_log>";
+                                            resultHTML += "<span class=span_title>运单追踪</span>";
+                                            if(jsonRes.Rst) {
+                                                for (i = 0; i < jsonResLog.Rst.length; i++) {
+                                                    logInfo = jsonResLog.Rst[i];
+//                                                alert(logInfo);
+                                                    resultHTML += "<div class=div_search_inventory_log_item>";
+                                                    resultHTML += "<span class=span_time>" + moment(logInfo[3], "DD/MM/YYYY HH:mm:ss").format("YYYY-MM-DD HH:mm:ss") + "</span>";
+
+                                                    resultHTML += logInfo[0] != "" ? "<span class=span_content>" + logInfo[0] + "</span>" : "";
+                                                    resultHTML += (logInfo[0] != "" && logInfo[1] != "") ? "<span class=span_content>" + "至" + "</span>" : "";
+                                                    resultHTML += logInfo[1] != "" ? "<span class=span_content>" + logInfo[1] + "</span>" : "";
+
+                                                    resultHTML += "<span class=span_content>" + logInfo[2] + "</span>";
+                                                    resultHTML += "</div>";
+                                                }
+                                            }
+                                            resultHTML += "</div>";
+//                                        resultHTML += "<div class=div_search_inventory_split></div>"
+//                                            alert("2--"+$("#div_info_"+inventoryInfo[0]).last().html());
+                                            $("#div_info_"+inventoryInfo[0]).last().html($("#div_info_"+inventoryInfo[0]).last().html()+resultHTML);
+//                                            alert("3--"+$("#div_info_"+inventoryInfo[0]).last().html());
+                                        }
+                                ).fail(
+//                                        function (jqXHR, textStatus, errorThrown) {
+//                                            alert("error 1 : "+errorThrown);
+//                                        }
+                                );
+                            }
+                        }
+                ).fail(
+//                        function (jqXHR, textStatus, errorThrown) {
+//                            alert("error 2 : "+errorThrown);
+//                        }
+                );
+            }
+            else{
+//                var resultWrongCode = "请输入正确的快递单号";
+//                $("#div_searchResult").html(resultWrongCode);
+            }
+        }
     }
 
     $(document).ready(initMe);
+
 </script>
 
 </body>

@@ -163,7 +163,6 @@
                 <div style="border: 1px solid #f2f2f2;margin-top: 15px;">
                     <div id="div_q" style="float:left;vertical-align: middle;height: 40px;line-height: 40px;margin-left: 10px;"><img src="img/subnavi/q.png"/></div>
                     <div id=Div_MultiInput style="float:left;width:auto;border: 0px solid red;opacity: 0.9;border-radius: 5px;overflow-y: auto;overflow-x: hidden;" >
-                        <input id="input_Code" style="line-height: 20px; height: 40px; border:0px solid green; color:#999999;outline:none;margin-left: 3px;" placeholder="请输入您的订单号" maxlength="20">
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -257,6 +256,7 @@
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/caravan.js"></script>
+<script src="js/segmentInput.js"></script>
 
 <script>
 
@@ -335,8 +335,12 @@
                     $("#input_Code").focus();
                 }
         );
-        $("#input_Code").keyup(dealInputCodeKeyUp);
-        $("#Div_Sub_Query").click(goQuery);
+        var inputs = $('#Div_MultiInput').segInput()
+        $("#Div_Sub_Query").click(
+                function() {
+                    goQuery(inputs.getInputs());
+                }
+        );
 
         $("#spn_map_jrd").click(function(){$("#img_map_jrd").toggle(500)});
         $("#spn_map_crd").click(function(){$("#img_map_crd").toggle(500)});
