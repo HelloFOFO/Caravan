@@ -36,9 +36,9 @@
     }
     //删除一个项目
     var removeItem = function(index){
-        var items = $('#input_Code').parent().find('.div_mi_item')
-        index==-1 ? items[ items.length -1 ].remove() : items[ index ].remove()
-        userInputs.splice(index,1)
+        var items = $('#input_Code').parent().find('.div_mi_item');
+        index==-1 ? $(items[ items.length -1 ]).remove() : $(items[ index ]).remove();
+        userInputs.splice(index,1);
         //userInputs.pop()
     }
 

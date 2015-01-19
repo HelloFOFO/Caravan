@@ -198,7 +198,7 @@ p.p_menu_list a:hover{padding-top: 20px;font-family: 'microsoft yahei';font-size
 .Font_Bottom2 a:hover{font-family: 'Microsoft YaHei';font-size: 14px;line-height: 28px;color: #464646;}
 .Font_Bottom2 a:visited{font-family: 'Microsoft YaHei';font-size: 14px;line-height: 28px;color: #838383;}
 
-.div_search_inventory_info{ margin-top: 20px; position:relative; background-color: #eeeeee;}
+.div_search_inventory_info{ margin-top: 20px; position:relative; background-color: #eeeeee; border-radius: 5px;}
 .div_search_inventory_info .span_title{font-family: 'Microsoft YaHei';font-size: 18px;color: #3F7213; font-weight: bold;}
 .div_search_inventory_info .span_content{font-family: 'Microsoft YaHei';font-size: 16px;color: #666666;}
 
